@@ -12,6 +12,7 @@
     + Then start server outside of the define and export in a different file
 + You do not have to specify the file type for your import, but it is best practice.
 + When installing dependencies, typing "--save" after will ensure that the dependencies being installed will be added to the dependencies list in the package.json file.
++ When installing dependencies for the backend, you can type "--save-dev" and it will save the dependency in devDependencies in the package.json file.
 + RPC is a way to call backend functions from the front end.
 + Using Express, we can set route peramiters by giving the route a name with a : .
     + Example: server.get("/users/:id")
@@ -28,3 +29,6 @@
     + TRACE - The TRACE method performs a message loop-back test along the path to the target resource.
     + PATCH - The PATCH method is used to apply partial modifications to a resource.
 + By default, the browser can only make GET Requests. Therefor we must use a REST Client such as PostMan or Insomnia to test endpoints other than Get.
++ When using delete, you can set the response status code to 204, the status coode for a successful empty response
+    + res.status(204).end()
++ 

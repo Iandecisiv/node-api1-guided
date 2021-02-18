@@ -53,4 +53,17 @@ server.put("/users/:id", (req, res) => {
     }
 })
 
+server.delete("/users/:id", (req, res) => {
+    const user = db.getUserById(req.params.id)
+    
+    if (user) {
+        db.deleteUser(user.id)
+        res.status(204).end()
+    } else {
+        res.status(404).json({
+            message: "User not found",
+        })
+    }
+})
+
 module.exports = server
